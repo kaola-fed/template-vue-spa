@@ -1,14 +1,24 @@
 const state = {
-    count: 0
+    systemTime: '',
+    info: {
+        title: ''
+    }
 };
 
 const getters = {
-    count: state => state.count
+    systemTime: state => state.count,
+    info: state => info
 };
 
 const actions = {
     increase({ commit }) {
         commit('increment');
+    },
+    updateSystemTime({ commit }, payload) {
+        commit('updateSystemTime', payload)
+    },
+    updateInfo({ commit }, payload) {
+        commit('updateInfo', payload)
     }
 };
 
@@ -16,9 +26,14 @@ const mutations = {
     setCount(state, count) {
         state.count = counts;
     },
-
     increment(state) {
         state.count++;
+    },
+    updateSystemTime(state, payload) {
+        state.systemTime = new Date(payload.systemTime);
+    },
+    updateInfo(state, payload) {
+        state.info = payload.info;
     }
 }
 

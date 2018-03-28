@@ -5,7 +5,7 @@ const webpackMiddleware = require('./koa-dev-middleware');
 const webpackConfig = require('../../build/webpack.config.dev');
 const koaMiddleware = require('koa-webpack');
 const pathTo = require('path');
-// const Mockpenter = require('mockpenter');
+const Oxz = require('oxz');
 
 const compiler = webpack(webpackConfig);
 const app = new Koa();
@@ -31,13 +31,13 @@ app.use(async (ctx, next) => {
                 ctx.body = index.toString();
             }
         } catch(err) {
-            next();
+            await next();
         }
     } else {
-        next();
+        await next();
     }
 });
 
-// Mockpenter.install(app);
+Oxz.install(app, pathTo.resolve(__dirname, '../oxz.config.js'));
 
 app.listen(9000);

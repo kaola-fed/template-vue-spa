@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>{{ count }}</h1>
-        <el-button @click="increase()">increase</el-button>
+        <h1>{{ info.title }}</h1>
+        <h3>{{ systemTime }}</h3>
     </div>
 </template>
 
@@ -10,29 +10,48 @@
 
 <script>
     import { mapState } from 'vuex';
+    import { demo } from '@/api';
 
     export default {
         computed: mapState({
-            count: state => state.demo.count
+            info: state => state.demo.info,
+            systemTime: state => state.demo.systemTime
         }),
-        mounted() {
-            this.$ajax.post('/api/demo', {
-                type: 'form-urlencoded',
-                data: {
-                    x: 1,
-                    b: 2
-                }
-            }).then((data) => {
-                console.log(data)
-            })
+        created() {
+            this.getInfo();
+            this.getEcho();
         },
         data() {
             return {
             }
         },
         methods: {
-            increase() {
-                this.$store.dispatch('demo/increase');
+            getInfo() {
+                demo.getInfo()
+                .then((res) => {
+                    this.$store.dispatch(
+                        'demo/updateInfo',
+                        {
+                            info: res.data
+                        }
+                    )
+                })
+            },
+            getEcho() {
+                demo.getEcho({
+                    data: {
+                        message: 'hello'
+                    },
+                    count: 3
+                }).then((res) => {
+                    console.log(res)
+                    this.$store.dispatch(
+                        'demo/updateSystemTime',
+                        {
+                            systemTime: res.systemtime
+                        }
+                    );
+                })
             }
         }
     };
