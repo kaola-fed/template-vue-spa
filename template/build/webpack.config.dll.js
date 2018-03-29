@@ -13,7 +13,8 @@ module.exports = {
       'vue',
       'vuex',
       'vue-router',
-      'element-ui'
+      'element-ui',
+      'axios'
     ]
   },
   output: {
