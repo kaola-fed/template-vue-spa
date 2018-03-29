@@ -84,8 +84,5 @@ module.exports = {
     new AddAssetHtmlPlugin({
       filepath: resolve('./dist/dll/runtime_*.js')
     }),
-
-    // scope hoisting
-    new webpack.optimize.ModuleConcatenationPlugin(),
   ]
 }
