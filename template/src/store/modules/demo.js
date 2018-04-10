@@ -7,7 +7,7 @@ const state = {
 
 const getters = {
     systemTime: state => state.count,
-    info: state => info
+    info: state => state.info
 };
 
 const actions = {
@@ -15,16 +15,16 @@ const actions = {
         commit('increment');
     },
     updateSystemTime({ commit }, payload) {
-        commit('updateSystemTime', payload)
+        commit('updateSystemTime', payload);
     },
     updateInfo({ commit }, payload) {
-        commit('updateInfo', payload)
+        commit('updateInfo', payload);
     }
 };
 
 const mutations = {
     setCount(state, count) {
-        state.count = counts;
+        state.count = count;
     },
     increment(state) {
         state.count++;
@@ -35,7 +35,7 @@ const mutations = {
     updateInfo(state, payload) {
         state.info = payload.info;
     }
-}
+};
 
 export default {
     namespaced: true,
@@ -43,4 +43,4 @@ export default {
     getters,
     actions,
     mutations
-}
+};

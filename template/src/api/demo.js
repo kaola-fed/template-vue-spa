@@ -8,6 +8,6 @@ export function getInfo() {
 
 export function getEcho(data) {
     return ajax.post('/api/demo/echo', {
-      data
+        data
     });
 }

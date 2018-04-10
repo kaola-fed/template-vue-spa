@@ -12,4 +12,4 @@ export default new Router({
         ...demo,
         ...abnormal
     ]
-})
+});

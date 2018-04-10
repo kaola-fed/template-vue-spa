@@ -5,5 +5,5 @@ export default [
         path: '/demo',
         name: 'Demo',
         component: view('demo')
-    },
-]
+    }
+];
