@@ -8,6 +8,6 @@ export default [
     {
         path: '/404',
         name: '404',
-        component: view('abnormal/404')
+        component: view('exception/404')
     }
 ];
