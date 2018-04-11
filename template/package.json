@@ -1,9 +1,9 @@
 {
-  "name": "test",
+  "name": "<%= projectName %>",
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "rm -rf ./dist && npm run build:dll && npm run build:prod",
+    "build": "npm run build:dll && npm run build:prod",
     "build:prod": "cross-env MODE=production webpack --config ./build/webpack.config.prod.js",
     "build:dll": "webpack --config ./build/webpack.config.dll.js",
     "dev": "cross-env MODE=development node ./mock/server/index.js",
