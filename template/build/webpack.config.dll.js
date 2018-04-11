@@ -1,10 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const _ = require('./utils');
+const buildConfig = require('./build.config');
 
-
-function resolve(p = '') {
-  return path.join(__dirname, '../', p);
-}
+console.log(_.resolve(buildConfig.output, 'dll'))
 
 module.exports = {
   mode: 'production',
@@ -18,7 +17,7 @@ module.exports = {
     ]
   },
   output: {
-    path: resolve('./dist/dll'),
+    path: _.resolve(buildConfig.output, 'dll'),
     library: '[name]_[chunkhash]',
     filename: '[name]_[chunkhash].js',
   },
@@ -30,9 +29,9 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new webpack.DllPlugin({
-      context: resolve(),
+      context: _.resolve(),
       name: '[name]_[chunkhash]',
-      path: resolve('./dist/dll/manifest.json'),
+      path: _.resolve(buildConfig.output, 'dll/manifest.json'),
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ]
