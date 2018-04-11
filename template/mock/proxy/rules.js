@@ -1,14 +1,14 @@
 module.exports = {
   local: [
     {
-      pathes: [
+      paths: [
         '/api/(.*)'
       ],
       target: 'https://127.0.0.1',
       host: 'xyz.com'
     },
     {
-      pathes: [
+      paths: [
         '*'
       ],
       target: 'http://localhost:9999',

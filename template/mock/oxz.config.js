@@ -5,7 +5,7 @@ const program = require('commander');
 program
   .option('-p, --proxy <proxy>', 'using proxy')
   .parse(process.argv.slice(0));
-program.proxy = 'local'
+
 module.exports = {
   port: 9000,
   local: {
