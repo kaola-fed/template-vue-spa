@@ -5,5 +5,5 @@
 ```bash
 npm i sao -g
 
-sao elcarim5efil/template-vue-spa [folderName] -u
+sao kaola-fed/template-vue-spa [folderName] -u
 ```
