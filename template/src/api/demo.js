@@ -1,6 +1,4 @@
-import Ajax from '@/utils/ajax';
-
-const ajax = Ajax.getInstance();
+import ajax from '@/common/utils/ajax';
 
 export function getInfo() {
     return ajax.get('/api/demo/info');

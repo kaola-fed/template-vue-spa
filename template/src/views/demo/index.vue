@@ -2,6 +2,10 @@
     <div>
         <h1>{{ info.title }}</h1>
         <h3>{{ systemTime }}</h3>
+        <div>
+            <router-link to="/demo/page/2"> to Demo page</router-link>
+        </div>
+        <el-button @click="onNotify">toast</el-button>
     </div>
 </template>
 
@@ -20,6 +24,12 @@
         created() {
             this.getInfo();
             this.getEcho();
+            this.$ajax.axios({
+                url: '/404api',
+                ignoreIntercepors: [
+                    'addHttpRequestHeader'
+                ]
+            })
         },
         data() {
             return {
@@ -52,6 +62,13 @@
                         }
                     );
                 })
+            },
+            onNotify() {
+                this.$notify({
+                    title: 'title',
+                    message: 'msg',
+                    duration: 3000
+                });
             }
         }
     };

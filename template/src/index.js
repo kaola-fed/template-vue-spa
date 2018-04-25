@@ -3,7 +3,7 @@ import store from './store';
 import Element from 'element-ui';
 import App from './App';
 import router from './router';
-import ajax from '@/utils/ajax';
+import ajax from '@/common/utils/ajax';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false;
