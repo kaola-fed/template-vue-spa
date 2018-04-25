@@ -78,7 +78,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: _.resolve('./src/templates/index.html'),
+      template: _.resolve('./src/index.html'),
     }),
     new AddAssetHtmlPlugin({
       filepath: _.resolve(buildConfig.output, 'dll/runtime_*.js')
