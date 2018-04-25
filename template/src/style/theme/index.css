@@ -1,0 +1,32 @@
+/* 覆盖 element-kaola 中的样式，仅项目专用的样式在此覆盖 */
+
+@component-namespace el {
+    @b button {
+        @m default, button {
+            border: 1px solid #ddd;
+        }
+    }
+    @b dialog {
+        @m full {
+        top: 0 !important;
+        }
+        @e header {
+            padding: 20px 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        @e title {
+            font-size: 12px;
+            line-height: 1;
+            font-weight: 700;
+            color: #333;
+        }
+
+        @e close {
+            font-size: 21px;
+            font-weight: 700;
+            top: 0;
+            right: 5px;
+        }
+    }
+}

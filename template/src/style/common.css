@@ -1,0 +1,5 @@
+/* 全局公用样式,使用 kaola 命名空间开头 非覆盖 element */
+
+@component-namespace kaola {
+
+}

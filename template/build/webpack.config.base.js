@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const _ = require('./utils');
 const webpack = require('webpack');
 const path = require('path');
@@ -57,8 +59,28 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-      { test: /\.css$/, use: [{ loader: 'style-loader'}, { loader: 'css-loader' }] },
+      { test: /\.css$/, use: [
+        isDev ? { loader: 'style-loader' } : MiniCssExtractPlugin.loader,
+        { loader: 'css-loader' },
+        { loader: 'postcss-loader' },
+      ]},
       { test: /\.less$/, use: [{ loader: 'style-loader'}, { loader: 'css-loader' }, { loader: 'less-loader' }] },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: './static/img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: './static/media/[name].[hash:7].[ext]'
+        }
+      },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
@@ -77,9 +99,15 @@ module.exports = {
       manifest: require(_.resolve(buildConfig.output, 'dll/manifest.json')),
     }),
 
+    new MiniCssExtractPlugin({
+      filename: "[name]_[chunkhash].css",
+      chunkFilename: "[id]_[chunkhash].css"
+    }),
+
     new HtmlWebpackPlugin({
       template: _.resolve('./src/index.html'),
     }),
+
     new AddAssetHtmlPlugin({
       filepath: _.resolve(buildConfig.output, 'dll/runtime_*.js')
     }),
