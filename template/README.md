@@ -24,6 +24,7 @@ npm run build
 
 ## structure
 
+```
 |____mock       // mock 文件夹
 | |____proxy    // 代理配置
 | |____server   // mock server
@@ -69,6 +70,7 @@ npm run build
 | | |____exception.js   // 建议一个文件管理一个一级路径，与 views 下目录尽量统一
 | | |____demo.js
 | | |____helpers
+```
 
 ## proxy
 
