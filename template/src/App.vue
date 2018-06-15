@@ -1,22 +1,35 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="page">
+        <head-top/>
+        <div class="g-main">
+            <side-nav 
+                :isExtend="isExtend"
+                @sideBarClicked="isExtend = !isExtend"/>
+            <div class="g-content" 
+                :class="[isExtend ? 'slide-to-right' : 'slide-to-left']">
+                <router-view/>
+                <foot-bottom/>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-export default {
-    name: 'App'
-};
-</script>
+    import headTop from '@/components/layout/headTop';
+    import sideNav from '@/components/layout/sideNav';
+    import footBottom from '@/components/layout/footBottom';
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    export default {
+        name: 'App',
+        components: {
+            headTop,
+            sideNav,
+            footBottom,
+        },
+        data() {
+            return {
+                isExtend: true
+            }
+        },
+    };
+</script>

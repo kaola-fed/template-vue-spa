@@ -1,35 +1,27 @@
-@font-face {
-  font-family: "iconfont";
-  src: url('./iconfont.eot?t=1501660627375'); /* IE9*/
-  src: url('./iconfont.eot?t=1501660627375#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('./iconfont.woff?t=1501660627375') format('woff'), /* chrome, firefox */
-    url('./iconfont.ttf?t=1501660627375') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('./iconfont.svg?t=1501660627375#iconfont') format('svg'); /* iOS 4.1- */
-  font-weight: normal;
-  font-style: normal;
+@font-face {font-family: "scaffold-font";
+    src: url('iconfont.eot?t=1529050742481'); /* IE9*/
+    src: url('iconfont.eot?t=1529050742481#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAcIAAsAAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kghY21hcAAAAYAAAABlAAABnM8YarZnbHlmAAAB6AAAAxMAAAPEaQfGHWhlYWQAAAT8AAAALwAAADYRsnLpaGhlYQAABSwAAAAcAAAAJAfeA4VobXR4AAAFSAAAABAAAAAQD+kAAGxvY2EAAAVYAAAACgAAAAoCWADSbWF4cAAABWQAAAAfAAAAIAETAMduYW1lAAAFhAAAAVsAAAKpL96nknBvc3QAAAbgAAAAJgAAADdWh3DjeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk/sU4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVDwzZW7438AQw9zA0AAUZgTJAQAn8QyjeJzFkMENwCAIRT9iG9N0lHqrHainjuDErGEBvTiB3zyBHyIGABsAVi4lAvSBYHrVJfcZh/sRj9ZJT9BYJUtpbcpM5B3Js2Av045lonWjZ51+36OyfdeBflFyx/YqpQP+AQGSEPsAAAB4nE1SW4scRRSuU9XV1V3d0/eZvsx2z3b3TPcsEwen0zPj3iZkkwy6BBQlxJVIVgNrXvRBhECQZQgIPkgQfBZEAv4AwQfZBx/03V8gRP0bO6amI2id83CqzvkO33dOIYrQP8/JBQmQi4Zogm6itxACeQSZgWNIy3qMR9BOadv3DFLmZcrybEwOwc9kr1PN6sKXmWyCAQlcTatZOcYlTOsF3oeqEwOE3egdZ7DlkK+BB2XyxfoYfw/tXr5lLl5Zv3Hlmldtu8oj3XFCx/lKkSlVMJZMAz72OypVubx+Rs2ofdHbwT3QwzK6fdLa7joffFl/Eg98FWC1Are7bfxwzY5s4Z9HHdcJmdVSgqiV9z149LcWuHpc/IXEkYTW78g35BR1UYlGaF8ozadCYaM1N4DZCfjpAqZ2XQyEiCrZzABSO6Uya3tyVpTTolwIaeT88WD57oOT5eCxqgFoKv5D1fXLi97e8dvHe731Q1xeHuOf1n+CG2Q+uABZnWN6NjlZ9vvLk8mZgFz+9i90X9U+2hEoAd45u/wVu8+7zq7t+/au043yHIHgvZIQWaGfBWOvGXc5bryYFodQzxew8Wo2nxWTMYhwVhbCxpCL7TDZ77BXZV9sSMgTLhbjMY8JvSI3BoHaoGfzpuHGZvNCXCeV3/E7MkuaOmYQMQL/ZQdRP62b8qxp07x3rm4IJCBKIc+abMNsVjVZCS1vhLLJ/IPe6JYBmLNQAq5gTRINKG0R2nF2OGXD+P0yxMQhOgNJwwoHKWIcg3Fr5PuKxWQlCPqvcQAwQpkrpoQVVhxUn95OplGsa4yJD6RwSVNbDPh8sLUX8cPrg/6TO3d/uXvnSX/QhKcHn02ZpVK2e3708P69p+VwWD69d//3JoTVhz++HlCQvS3dGmaEuHaty3SSMA5WoHOpZVXp9TyhWGm1cJXNp0tD5XpgAWfJhMp6bbuEZENL5UQ2LaKpRty2zaFZdyn3+nakfPvmES74aHaeqqHd9zh1YtdThqbdjg0tcrWjZ++d/kf2Je8kliTLpL30f0yb8AWp+Y3sAHicY2BkYGAA4vIpM/3j+W2+MnCzMIDAdc/pZQj6fwMLA3MDkMvBwAQSBQAjeQoOAHicY2BkYGBu+N/AEMPCAAJAkpEBFbAAAEcKAm0EAAAAA+kAAAQAAAAEAAAAAAAAAAB2ANIB4gAAeJxjYGRgYGBh2M3AygACTEDMBYQMDP/BfAYAG2wB2wB4nH2QzUrDQBSFT/onpuhC0UU3Di4ElaY/oItuC+1OoYtuXKXpTJuSZEIyLfQFfAcfwCfxOfQFfAlP01FooSZk+O53z70MAXCGLzjYPhf8tuzghNWWSzjCteUy/a3lCvnRchV19C3X6J8su7jHi+U6zvHKDU7lmNUd3iw7aODDcgmn+LRcpv+2XEHDqVqu4tK5slyjf7DsYuw8W67jxnl3+5n0jZyKyVqEgU6UToybB75SOpo2N9VIzpaRn+24nWIsszzUieh47R0/lInMfnfnq1nXGCVUpmMxYFdGkRZpphcyMN7cmLTXainrvUDHvGofGSR8GJ5TCEyw5hkigEYCVZyGuZzGZ70xEZPNv96IkzMsaX3uOpw73Blzw2YyLGqBDjy0/8kPmU+Kmf1751jxLl1aw7Tgl3EmJg3srOSuiCyQFr0FTUDvYV5MpeihxVft5b3ij8Q/E/58+AB4nGNgYoAALgbsgIWRiZGZkYWRlYGxgiUnPzmbKbeSgQEAGPMDMQAA') format('woff'),
+    url('iconfont.ttf?t=1529050742481') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1529050742481#scaffold-font') format('svg'); /* iOS 4.1- */
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[class^="scaffold-icon-"], [class*=" scaffold-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'scaffold-font' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-rotate-right:before { content: "\e60e"; }
-
-.icon-rotate-left:before { content: "\e60f"; }
-
-.icon-download:before { content: "\e632"; }
-
-.icon-rezoom:before { content: "\e647"; }
-
-.icon-add-o:before { content: "\e762"; }
-
-.icon-delete-o:before { content: "\e769"; }
-
+.scaffold-icon-lock:before { content: "\e62d"; }
+.scaffold-icon-my:before { content: "\e635"; }
