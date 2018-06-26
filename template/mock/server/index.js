@@ -25,20 +25,20 @@ const devMiddleware = koaMiddleware({
 // webpack
 app.use(devMiddleware);
 
-// app.use(async (ctx, next) => {
-//     if (ctx.method.toLocaleLowerCase() === 'get' && !ctx.accept.headers['x-requested-with']) {
-//         try {
-//             const index = devMiddleware.dev.fileSystem.readFileSync(_.resolve(buildConfig.output, './index.html'));
-//             if (index) {
-//                 ctx.body = index.toString();
-//             }
-//         } catch(err) {
-//             await next();
-//         }
-//     } else {
-//         await next();
-//     }
-// });
+app.use(async (ctx, next) => {
+    if (ctx.method.toLocaleLowerCase() === 'get' && !ctx.accept.headers['x-requested-with']) {
+        try {
+            const index = devMiddleware.dev.fileSystem.readFileSync(_.resolve(buildConfig.output, './index.html'));
+            if (index) {
+                ctx.body = index.toString();
+            }
+        } catch(err) {
+            await next();
+        }
+    } else {
+        await next();
+    }
+});
 
 Oxz.install(app, oxzConfig);
 
