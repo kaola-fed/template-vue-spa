@@ -1,5 +1,53 @@
 /* 全局公用样式,使用 kaola 命名空间开头 非覆盖 element */
 
-@component-namespace kaola {
-
+@component-namespace g {
+    @b content {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        right: 0;
+        overflow-y: auto;
+        left: 220px;
+        padding: 10px 20px 10px 30px;
+        &.slide-to-left {
+            transition: left .3s;
+            left: 0;
+        }
+        &.slide-to-right {
+            transition: left .3s;
+            left: 220px;
+        }
+    }
+    @b side-nav {
+        background-color: white;
+        width: 220px; 
+        position: absolute;
+        top: 60px;
+        left: 0;
+        bottom: 0;
+        border-right: 1px solid  #e6e6e6;
+        transition: transform .3s;
+        transform: translateX(-100%);
+        z-index: 1;
+        &.active {
+            transform: translateX(0);
+        }
+        .m-nav-list {
+            height: 100%;
+            overflow-y: auto;
+        }
+        .u-sidebar-btn {
+            position: absolute;
+            left: 220px;
+            top: 50%;
+            background-color: #c2c9d0;
+            color: #fff;
+            cursor: pointer;
+            width: 16px;
+            height: 50px;
+            transform: translateY(-50%);
+            line-height: 50px;
+            text-align: center;
+        }
+    }
 }

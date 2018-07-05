@@ -1,15 +1,21 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import demo from './demo';
+import demo1 from './demo1';
+import demo2 from './demo2';
 import exception from './exception';
 
 Vue.use(Router);
 
 const router = new Router({
-    // mode: 'history',
+    mode: 'history',
     routes: [
-        ...demo,
+        {
+            path: '/',
+            redirect: { name: 'Demo1' }
+        },
+        ...demo1,
+        ...demo2,
         ...exception
     ]
 });
