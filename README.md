@@ -3,7 +3,7 @@
 ## install
 
 ```bash
-npm i sao -g
+npm i sao@0.22.17 -g
 
 sao kaola-fed/template-vue-spa [folderName] -u
 ```
